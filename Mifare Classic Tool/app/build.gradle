@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdk 33
-
+    
     defaultConfig {
         applicationId "de.syss.MifareClassicTool"
         minSdk 19
@@ -25,9 +25,17 @@ android {
     tasks.withType(JavaCompile) {
         options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
     }
+    
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
     implementation "androidx.core:core:1.9.0"
     implementation "androidx.preference:preference:1.2.0"
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4'
 }

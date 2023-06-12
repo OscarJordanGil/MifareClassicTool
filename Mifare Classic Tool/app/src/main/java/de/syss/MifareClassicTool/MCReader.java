@@ -73,7 +73,7 @@ public class MCReader {
      * Initialize a MIFARE Classic reader for the given tag.
      * @param tag The tag to operate on.
      */
-    private MCReader(Tag tag) {
+    public MCReader(Tag tag) {
         MifareClassic tmpMFC;
         try {
             tmpMFC = MifareClassic.get(tag);
@@ -1047,7 +1047,7 @@ public class MCReader {
      * @param ac The access conditions (4 bytes).
      * @return True if key B is readable. False otherwise.
      */
-    private boolean isKeyBReadable(byte[] ac) {
+    public boolean isKeyBReadable(byte[] ac) {
         if (ac == null) {
             return false;
         }
